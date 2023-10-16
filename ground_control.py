@@ -16,25 +16,27 @@ server_socket.listen(1)
 
 print("GroundControl is waiting for a connection...")
 
-# Accept a connection from Drone
-client_socket, addr = server_socket.accept()
+while True:
+    # Accept a connection from Drone
+    client_socket, addr = server_socket.accept()
 
-print("Connection from:", addr)
+    print("Connection from:", addr)
 
-# Receive the message from Drone
-message = client_socket.recv(1024)
+    try:
+        # Receive the message from Drone
+        message = client_socket.recv(1024)
 
-# Parse the received JSON message
-received_message = json.loads(message.decode('utf-8'))
+        # Parse the received JSON message
+        received_message = json.loads(message.decode('utf-8'))
 
-# Print the received message
-print("Received message from Drone:", received_message)
+        # Print the received message
+        print("Received message from Drone:", received_message)
 
-# Send a response back to Drone
-response_message = {"value": "received"}
-response_json = json.dumps(response_message)
-client_socket.send(response_json.encode('utf-8'))
+        # Send a response back to Drone
+        response_message = {"value": "received"}
+        response_json = json.dumps(response_message)
+        client_socket.send(response_json.encode('utf-8'))
 
-# Close the sockets
-client_socket.close()
-server_socket.close()
+    finally:
+        # Close the socket for this connection
+        client_socket.close()
