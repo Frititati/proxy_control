@@ -7,8 +7,8 @@ def send_message_to_ground_control(message):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Set the IP address and port number of the GroundControl
-    host = "127.0.0.1"  # Change this to the IP address of the GroundControl
-    port = 12345       # Change this to the port number you want to use
+    host = "localhost"  # Change this to the IP address of the GroundControl
+    port = 12348       # Change this to the port number you want to use
 
     try:
         # Connect to the GroundControl

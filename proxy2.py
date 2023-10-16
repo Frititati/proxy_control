@@ -2,7 +2,7 @@ import socket
 import threading
 
 # Constants
-LISTEN_IP = '0.0.0.0'
+LISTEN_IP = 'localhost'
 GROUND_TCP_PORT = 12348
 GROUND_UDP_PORT = 12349
 TUNNEL_PORT = 12347

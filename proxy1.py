@@ -2,7 +2,7 @@ import socket
 import threading
 
 # Constants
-LISTEN_IP = '0.0.0.0'
+LISTEN_IP = 'localhost'
 DRONE_TCP_PORT = 12345
 DRONE_UDP_PORT = 12346
 PROXY2_IP = 'localhost'  # Change to Proxy2's IP

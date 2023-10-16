@@ -5,7 +5,7 @@ import socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Set the IP address and port number to listen on
-host = "127.0.0.1"  # You can change this to a specific IP address or use "0.0.0.0" for all available interfaces
+host = "localhost"  # You can change this to a specific IP address or use "0.0.0.0" for all available interfaces
 port = 12345       # Choose the same port number used in Drone.py
 
 # Bind the socket to the specified address and port
